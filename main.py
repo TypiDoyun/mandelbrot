@@ -8,10 +8,6 @@ frame_size = (
     int(4096 // 2),
     int(2160 // 2)
 )
-# frame_size = (
-#     int(1024),
-#     int(540)
-# )
 frame_center = ( element // 2 for element in frame_size )
 frame_amount = 300
 frame_per_second = 30
@@ -37,7 +33,7 @@ coord_center = (
 )
 point = (
     -42881.01196289065, -989774.8110245687
-)
+)  # zoom point
 
 frame = np.full(
     shape = ( frame_size[1], frame_size[0], 3 ),
@@ -55,7 +51,7 @@ def lerf(start: list[np.longdouble], end: list[np.longdouble], t: float):
         (1 - t) * start[1] + t * end[1],
     ]
 
-def ease(x: float):
+def ease(x: float): # easing function
     return (6 * x ** 5 - 15 * x ** 4 + 10 * x ** 3); 
 
 
